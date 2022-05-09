@@ -10,21 +10,26 @@ public class JavaodevPdp {
 
     public static ArrayList<Block> blockchain = new ArrayList<Block>();
     public static int difficulty = 5;
+    private static int reward=0;
     
     public static void main(String[] args) {
         
                 blockchain.add(new Block("The first block", "0"));
 		System.out.println("Trying to Mine block 1... ");
 		blockchain.get(0).mineBlock(difficulty);
+                reward=reward+100;
 		
 		blockchain.add(new Block("The second block",blockchain.get(blockchain.size()-1).hash));
 		System.out.println("Trying to Mine block 2... ");
 		blockchain.get(1).mineBlock(difficulty);
+                reward=reward+100;
 		
 		blockchain.add(new Block("The third block",blockchain.get(blockchain.size()-1).hash));
 		System.out.println("Trying to Mine block 3... ");
 		blockchain.get(2).mineBlock(difficulty);	
-		
+		reward=reward+100;
+                
+                System.out.println("\nMiner's reward: "+reward);
 		System.out.println("\nBlockchain is Valid: " + isChainValid());
 		
 		String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);		
