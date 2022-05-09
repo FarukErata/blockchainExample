@@ -10,7 +10,7 @@ public class JavaodevPdp {
 
     public static ArrayList<Block> blockchain = new ArrayList<Block>();
     public static int difficulty = 5;
-    private static int reward=0;
+    private static float reward=0;
     
     public static void main(String[] args) {
         
